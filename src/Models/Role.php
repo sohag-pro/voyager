@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Tests\Database\Factories\RoleFactory;
+use App\Traits\HasUuid;
 
 class Role extends Model
 {
-    use HasFactory;
+    use HasFactory, HasUuid;
 
     protected $guarded = [];
 

@@ -32,12 +32,12 @@ class TranslationsTableSeeder extends Seeder
         // Adding translations for 'categories'
         //
         $cat = Category::where('slug', 'category-1')->first();
-        if ($cat->exists) {
+        if ($cat) {
             $this->trans('pt', $this->arr(['categories', 'slug'], $cat->id), 'categoria-1');
             $this->trans('pt', $this->arr(['categories', 'name'], $cat->id), 'Categoria 1');
         }
         $cat = Category::where('slug', 'category-2')->first();
-        if ($cat->exists) {
+        if ($cat) {
             $this->trans('pt', $this->arr(['categories', 'slug'], $cat->id), 'categoria-2');
             $this->trans('pt', $this->arr(['categories', 'name'], $cat->id), 'Categoria 2');
         }
@@ -55,27 +55,27 @@ class TranslationsTableSeeder extends Seeder
         $_fld = 'display_name_singular';
         $_tpl = ['data_types', $_fld];
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.singular'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Post');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.singular'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Página');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.user.singular'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizador');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.category.singular'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categoria');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.singular'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menu');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.role.singular'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Função');
         }
 
@@ -84,27 +84,27 @@ class TranslationsTableSeeder extends Seeder
         $_fld = 'display_name_plural';
         $_tpl = ['data_types', $_fld];
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.post.plural'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Posts');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.page.plural'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Páginas');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.user.plural'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Utilizadores');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.category.plural'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Categorias');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.menu.plural'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Menus');
         }
         $dtp = DataType::where($_fld, __('voyager::seeders.data_types.role.plural'))->first();
-        if ($dtp->exists) {
+        if ($dtp) {
             $this->trans('pt', $this->arr($_tpl, $dtp->id), 'Funções');
         }
     }
@@ -117,7 +117,7 @@ class TranslationsTableSeeder extends Seeder
     private function pagesTranslations()
     {
         $page = Page::where('slug', 'hello-world')->first();
-        if ($page->exists) {
+        if ($page) {
             $_arr = $this->arr(['pages', 'title'], $page->id);
             $this->trans('pt', $_arr, 'Olá Mundo');
             /**
@@ -146,57 +146,57 @@ class TranslationsTableSeeder extends Seeder
     {
         $_tpl = ['menu_items', 'title'];
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.dashboard'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Painel de Controle');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.media'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Media');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.posts'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Publicações');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.users'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Utilizadores');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.categories'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Categorias');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.pages'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Páginas');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.roles'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Funções');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.tools'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Ferramentas');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.menu_builder'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Menus');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.database'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Base de dados');
         }
 
         $_item = $this->findMenuItem(__('voyager::seeders.menu_items.settings'));
-        if ($_item->exists) {
+        if ($_item) {
             $this->trans('pt', $this->arr($_tpl, $_item->id), 'Configurações');
         }
     }
@@ -221,7 +221,7 @@ class TranslationsTableSeeder extends Seeder
             'locale' => $lang,
         ]));
 
-        if (!$_t->exists) {
+        if (!$_t) {
             $_t->fill(array_merge(
                 $keys,
                 ['value' => $value]

@@ -18,7 +18,7 @@ class TranslationsTableSeeder extends Seeder
     {
         $this->dataTypesTranslations();
         $this->categoriesTranslations();
-        $this->pagesTranslations();
+        // $this->pagesTranslations();
         $this->menusTranslations();
     }
 

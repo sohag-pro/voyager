@@ -17,6 +17,7 @@ class PagesTableSeeder extends Seeder
      */
     public function run()
     {
+        return true;
         //Data Type
         $dataType = $this->dataType('slug', 'pages');
         if (!$dataType->exists) {

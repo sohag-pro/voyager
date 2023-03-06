@@ -13,7 +13,7 @@ class AddVoyagerUserFields extends Migration
             if (!Schema::hasColumn('users', 'avatar')) {
                 $table->string('avatar')->nullable()->after('email')->default('users/default.png');
             }
-            $table->foreignUuid('role_id')->after('id')->references('id')->on('roles')->onDelete('cascade');
+            $table->uuid('role_id')->after('id');
         });
     }
 

@@ -35,6 +35,12 @@ class AddBreadPermission
             // Get permission for added table
             $permissions = Voyager::model('Permission')->where(['table_name' => $bread->dataType->name])->get()->pluck('id')->all();
 
+            // get exsisting permissions of this role
+            $exsistingPermissions = $role->permissions->pluck('id')->all();
+
+            // get new permissions
+            $permissions = array_values(array_diff($permissions, $exsistingPermissions));
+
             // Assign permission to admin
             $role->permissions()->attach($permissions);
         }

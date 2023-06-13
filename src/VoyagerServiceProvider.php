@@ -296,7 +296,7 @@ class VoyagerServiceProvider extends ServiceProvider
                 $this->registerPolicies();
             }
         } catch (\PDOException $e) {
-            Log::info('No database connection yet in VoyagerServiceProvider loadAuth(). No worries, this is not a problem!');
+            // Log::info('No database connection yet in VoyagerServiceProvider loadAuth(). No worries, this is not a problem!');
         }
 
         // Gates
